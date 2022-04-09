@@ -8,5 +8,6 @@ Route.get('/', ControllerStreamer.listall)
     .get('/:key/:value', ControllerStreamer.find, ControllerStreamer.show)
     .put('/:key/:value', ControllerStreamer.find, ControllerStreamer.update)
     .delete('/:key/:value', ControllerStreamer.find, ControllerStreamer.deleted)
+    .post('/login', ControllerStreamer.comprobar)
 
 module.exports = Route;

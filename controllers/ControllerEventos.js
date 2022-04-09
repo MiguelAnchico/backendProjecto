@@ -10,7 +10,7 @@ function listall(req, res) {
 }
 
 function create(req, res) {
-    let Eventos = new Eventos(req.body);
+    let eventos = new Eventos(req.body);
     eventos._id = mongoose.Types.ObjectId();
     eventos.save()
         .then(eventos =>

@@ -58,11 +58,28 @@ function find(req, res, next) {
     })
 }
 
+function comprobar(req, res){
+    let contrasena = req.body.password;
+    let busqueda = {};
+    busqueda["correo"] = req.body.correo;
+    Streamer.find(busqueda).then(streamer => {
+        if (!streamer.length) return res.send({ message: 'nombre' });
+        if(streamer[0].password == contrasena){
+            return res.send({message: "Correcto", nombre: streamer[0].nombre})
+        } else{
+            return res.send({message: "contrasena"})
+        }
+    }).catch(err => {
+        return res.send(err)
+    })
+}
+
 module.exports = {
     listall,
     create,
     find,
     show,
     deleted,
-    update
+    update,
+    comprobar,
 }

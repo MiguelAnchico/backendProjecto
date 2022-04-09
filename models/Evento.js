@@ -6,7 +6,11 @@ const EventosSchema = new mongoose.Schema({
         //unique: true,
         required: true
     },
-    Informacion: {
+    fecha: {
+        type: Date,
+        required: true
+    },
+    descripcion: {
         type: String,
         required: true
     },
@@ -15,20 +19,24 @@ const EventosSchema = new mongoose.Schema({
         required: true
     },
     participantes: {
-        type: Array,
-        required: true
+        type: String,
+        required: false
     },
     streamer: {
         type: String,
         required: true
     },
     notas: {
-        type: Array,
+        type: String,
+        required: false
+    },
+    estado: {
+        type: String,
         required: true
     },
     _id: {
         type: mongoose.Schema.Types.ObjectId,
-        required: false
+        required: true
     },
     }, {collection: 'Eventos'});
 

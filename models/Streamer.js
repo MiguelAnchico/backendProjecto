@@ -24,11 +24,11 @@ const StreamerSchema = new mongoose.Schema({
     },
     foto_perfil: {
         type: String,
-        required: true
+        required: false
     },
     datos_perfil: {
         type: String,
-        required: true
+        required: false
     },
     _id: {
         type: mongoose.Schema.Types.ObjectId,
